@@ -19,7 +19,7 @@ nav{
     padding: 0 3% 0 2%;
 }
 main{
-    background:  green;
+    background: #F2F2F2;
     height: 950px;
     width: 70%;
     flex-direction: column;
@@ -64,7 +64,7 @@ a:hover{
     margin-top: 55px;
 }
 .korzina{
-    background: #fff;
+    background: #F2F2F2;
     width: 100%;
     text-align: center;
     border-radius: 5px;
@@ -85,7 +85,7 @@ a:hover{
     background: #FF9846;
 }
 .adress {
-    background: #fff;
+    background: #F2F2F2;
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -120,7 +120,7 @@ a:hover{
 .main-header{
     width: 25%;
     background: #fff;
-    border-right:  1px solid #A4ACAD;
+    border-right:  0.5px solid #A4ACAD;
     display: flex;
     flex-direction: column;
     justify-content: center;

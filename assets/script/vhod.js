@@ -10,12 +10,15 @@ loginForm.addEventListener('submit', (event) => {
     const existingUsers = JSON.parse(localStorage.getItem('users') || '[]');
 
     // Проверяем, существует ли пользователь с введенными логином и паролем
-    const user = existingUsers.find(user => user.username === loginUsername && user.password === loginPassword);
+    const user = existingUsers.find(user => user.email === loginUsername && user.password === loginPassword);
 
     if (user) {
+        // Сохраняем данные текущего пользователя в localStorage
+        localStorage.setItem('currentUser', JSON.stringify(user));
+
         // Перенаправляем пользователя на другую страницу
-        window.location.href = '../index.html';
+        window.location.href = 'index.html';
     } else {
-        alert('Invalid username or password');
+        alert('Invalid email or password');
     }
 });

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="main-body">
+            <div class="col-md-8">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <a href="./index.html">Назад</a>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Username</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary" style="display: flex;">
+                                <span id="profileUsername"></span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Full Name</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                <span id="profileFirstName"></span>
+                                <span id="profileLastName"></span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Email</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                <span id="profileEmail"></span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Phone</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                <span id="profilePhoneNumber"></span>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <button id="logoutButton">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Код JavaScript для отображения данных текущего пользователя
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+        if (currentUser) {
+            document.getElementById('profileUsername').textContent = currentUser.username;
+            document.getElementById('profileFirstName').textContent = currentUser.firstName;
+            document.getElementById('profileLastName').textContent = currentUser.lastName;
+            document.getElementById('profilePhoneNumber').textContent = currentUser.phoneNumber;
+            document.getElementById('profileEmail').textContent = currentUser.email;
+        } else {
+            alert('You need to log in to view your profile.');
+        }
+
+        // Код JavaScript для обработки выхода из аккаунта
+        const logoutButton = document.getElementById('logoutButton');
+
+        logoutButton.addEventListener('click', () => {
+            // Удаляем данные текущего пользователя из localStorage
+            localStorage.removeItem('currentUser');
+
+            // Перенаправляем пользователя на страницу входа
+            window.location.href = 'vhod.html';
+        });
+    </script>
+    <style>
+        #logoutButton{
+            width: 200px;
+            height: 50px;
+            border-radius: 10px;
+            color: black;
+            background-color: #FF9846;
+        }
+        body{
+            margin-top:20px;
+            color: #1a202c;
+            text-align: left;
+            background-color: #e2e8f0;    
+        }
+        .main-body {
+            padding: 15px;
+            width: 50%;
+            
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 5%;
+        }
+        .card {
+            box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+        }
+        
+        .card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 0 solid rgba(0,0,0,.125);
+            border-radius: .25rem;
+        }
+        
+        .card-body {
+            flex: 1 1 auto;
+            min-height: 1px;
+            padding: 1rem;
+        }
+        
+        .gutters-sm {
+            margin-right: -8px;
+            margin-left: -8px;
+        }
+        
+        .gutters-sm>.col, .gutters-sm>[class*=col-] {
+            padding-right: 8px;
+            padding-left: 8px;
+        }
+        .mb-3, .my-3 {
+            height: 700px;
+            margin-bottom: 1rem!important;
+        }
+        
+        .bg-gray-300 {
+            background-color: #e2e8f0;
+        }
+        .h-100 {
+            height: 100%!important;
+        }
+        .shadow-none {
+            box-shadow: none!important;
+        }</style>
+</body>
+</html>
+        

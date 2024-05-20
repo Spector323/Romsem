@@ -139,8 +139,13 @@ a:hover{
 }
 .main-nav{
     width: 75%;
-    background: red;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0 2% 0 1%;
+}
+.profile_main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

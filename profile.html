@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./assets/styles/profile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>ROMSEM</title>
+</head>
+<body>
+    
+    <main>
+        <div class="main_container">
+            <h1 class="span">Личный кабинет</h1>
+            <div class="container">
+                <h3 style="
+                font-size: 34px;
+                font-weight: 600;
+                line-height: 44.2px;
+                text-align: left;
+                ">Личная информация</h3>
+                <div class="block_main">
+                    <div class="block_name">
+                        <p>Имя</p>
+                        <input type="text" class="btn_fs" style="margin-right: 10px;">
+                    </div>
+                    <div class="block_fame">
+                        <p>Фамилия</p>
+                        <input type="text" class="btn_fs">
+                    </div>
+                </div>
+                <div class="block_main">
+                    
+                    <div class="block_number">
+                        <p>Телефон</p>
+                        <input type="text" maxlength="9" class="btn_fs" id="profilePhoneNumber">
+                    </div>
+                </div>
+                <div class="block_main">
+                    <div class="block_mail">
+                        <p>E-mail</p>
+                        <input type="text" class="btn_fs">
+                    </div>
+                </div>
+                <div class="block_main">
+                    <div class="block_new_password">
+                        <p>Новый пароль</p>
+                        <input type="text" class="btn_fs" style="margin-right: 10px;">
+                    </div>
+                    <div class="block_password">
+                        <p>Подтверждение пароля</p>
+                        <input type="text" class="btn_fs">
+                    </div>
+                </div>
+                <button class="block_btn">Сохранить</button>
+            </div>
+        </div>
+    </main>
+    <nav>
+        <div class="nav_container">
+            <div class="korzina">
+                <h1 style="
+                font-size: 22px;
+                font-weight: 500;
+                ">Ваша корзина пуста.</h1>
+                <section class="text">Добавьте же скорее что-нибудь!</section>
+                <button class="korzina_btn">Бесплатная доставка от 800 СОМ</button>
+            </div>
+            <div class="adress">
+                    <div class="map-container">
+                        <div style="position:relative;overflow:hidden;">
+                            <a href="https://yandex.ru/maps/org/ithub_magas/228736655304/?utm_medium=mapframe&utm_source=maps" style="color:#fff;font-size:12px;position:absolute;top:0px; ">IThub Magas</a>
+                            <a href="https://yandex.ru/maps/1092/nazran/category/college/184106236/?utm_medium=mapframe&utm_source=maps" style="color:#fff;font-size:12px;position:absolute;top:14px; ">Колледж в Назрани</a>
+                            <iframe src="https://yandex.ru/map-widget/v1/?ll=44.768674%2C43.231961&mode=search&oid=228736655304&ol=biz&sctx=ZAAAAAgBEAAaKAoSCTgUPlsHY0ZAEbosJjYfnUVAEhIJ9UwvMZbptz8R%2FmMhOgSOpD8iBgABAgMEBSgKOABAxAhIAWoCcnWdAc3MTD2gAQCoAQC9Ad1L5OjCAQbIv5GO1AaCAgtpdGh1YiBtYWdhc4oCAJICBTIwMTgxmgIMZGVza3RvcC1tYXBz&sll=44.768674%2C43.231961&source=serp_navig&sspn=0.186816%2C0.080285&text=ithub%20magas&z=13.4" width="290" height="116"  allowfullscreen="true" style="position:relative; border: 0;"></iframe>
+                        </div>
+                    </div>
+                    <div class="illustration">
+                        <img src="./assets/images/adress/Group.svg" alt="Иллюстрация кафе" >
+                      </div>
+                    <div class="address-container">
+                        <h1 style="
+                        font-size: 22px;
+                        font-weight: 500;
+                        ">Укажите адрес</h1>
+                     <section class="text">И узнайте время доставки</section>
+                      
+                  </div>
+                  
+            </div>
+        </div>
+    </nav>
+    <script>
+        // Код JavaScript для отображения данных текущего пользователя
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+        if (currentUser) {
+            document.getElementById('profileUsername').textContent = currentUser.username;
+            document.getElementById('profileFirstName').textContent = currentUser.firstName;
+            document.getElementById('profileLastName').textContent = currentUser.lastName;
+            document.getElementById('profilePhoneNumber').textContent = currentUser.phoneNumber;
+            document.getElementById('profileEmail').textContent = currentUser.email;
+        } else {
+            alert('You need to log in to view your profile.');
+        }
+
+        // Код JavaScript для обработки выхода из аккаунта
+        const logoutButton = document.getElementById('logoutButton');
+
+        logoutButton.addEventListener('click', () => {
+            // Удаляем данные текущего пользователя из localStorage
+            localStorage.removeItem('currentUser');
+
+            // Перенаправляем пользователя на страницу входа
+            window.location.href = 'vhod.html';
+        });
+    </script>
+    
+</body>
+</html>
+        

@@ -140,4 +140,7 @@ a:hover{
 .main-nav{
     width: 75%;
     background: red;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2% 0 1%;
 }
